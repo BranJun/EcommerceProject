@@ -1,0 +1,205 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+nav{
+    flex: 1;
+    text-align: right;
+}
+
+nav ul{
+    display: inline-block;
+    list-style-type: none;
+}
+
+nav ul li{
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 20px; /* sets size of nav list */
+}
+a{
+    text-decoration: none;
+    color: #000000; /* Sets the color of text in "header buttons" */
+}
+
+p{
+    text-decoration: none;
+    color: #000000; /* Sets color of paragraph statement */
+}
+
+.container{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.col-2{
+    flex-basis: 50%;
+    min-width: 300px;
+}
+
+.col-2 img{
+    max-width: 100%;
+    padding: 50px 0; /* Sets image size of soccer player */
+}
+
+.col-2 h1{
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px 0;
+}
+
+.btn{
+    display: inline-block;
+    background: #2a53ef;
+    color: #fff;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: background 0.5s;
+}
+
+.btn:hover{
+    background: #343e56;
+}
+
+.header{
+    background: radial-gradient(#ff8181, #59a5f5);
+}
+
+.header .row{
+    margin-top: 70px; /* spaces out header title and top of page */
+}
+
+/*Below, is the design text and sizing of the sample products...
+ that are connected to the categories class in the html file */
+.categories{
+    margin: 70px 0;
+}
+.col-3{
+    flex: 30%;
+    min-width: 250px;
+    margin-bottom: 30px;
+}
+.col-3 img{
+    width: 100%;
+}
+/* below, our small container has the product details with in the categories...
+here I design the products featured on the home page*/
+.small-container{
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+/* linking to .col-4:hover, we are editing our product image to be
+spaced out between each other by 10px and set a frame for it, to look aligned
+with our website, the transition tag allows :hover, to make the image
+jump Y-axis by 5 pxs and it will take 0.5sec to reach the top
+of the 5th px*/
+.col-4{
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+    transition: transform 0.5s;
+}
+.col-4 img{
+    width: 100%;
+}
+/* 'title' design, here im designing 'Our Featured Products' title
+ making it center and putting a rounded underline right underneath it*/
+.title{
+    text-align: center;
+    margin: 0 auto 80px;
+    position: relative;
+    line-height: 60px;
+    color: #555;
+}
+.title::after{
+    content: '';
+    background: #009dff;
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translatex(-50%);
+}
+/* h4, col-4 and rating, we are changing the font size of the title
+ of the product as well as the color, also we are changing the
+ color of the star rating.*/
+h4{
+    color: #555;
+    font-weight: normal;
+}
+.col-4 p{
+    font-size: 14px;
+}
+.rating .fa{
+    color: gold;
+}
+/*When hovering over the product,
+it will slightly move up by 5 pixels, giving it a hover effect
+linking to col-4 it will take 0.5sec to reach its 5th pixel,
+to get a longer floating effect as well*/
+.col-4:hover{
+    transform: translateY(-5px);
+}
+
+/*Footer design */
+.footer{
+    background:#000;
+    color:#8a8a8a;
+    font-size: 14px;
+    padding: 60px 0 20px;
+}
+/*Edit of the paragraph text and background color and margin
+space in the footer*/
+.footer p{
+    color:#8a8a8a;
+}
+.footer h3{
+    color: #fff;
+    margin-bottom: 20px;
+}
+.footer-col-1, .footer-col-3, .footer-col-4{
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+.footer-col-1{
+    flex-basis: 30%;
+}
+.footer-col-3, .footer-col-4{
+    flex-basis: 12%;
+    text-align: center;
+}
+/* Edits(or can remove) bullet points of the paragraph text */
+ul{
+    /* list-style-type: none(circle,square...) ; */
+    color: #7db9fc;
+}
+
+
+
