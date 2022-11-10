@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Shopping Cart</title>
+        <link rel ="stylesheet" href="cart.css">
+        <script src="cart.js" async></script>
+    </head>
+
+    <body>
+        <h1 style="font-size:50px">Shopping Cart</h1>
+        <p>
+            <strong>Items:</strong>
+        </p>
+
+
+        <!----- cart item details ----------------->
+        <div class="small-container cart-page">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+
+                 <tr>
+                     <div class = "cart-row">
+                     
+                    <td>
+                        <div class="cart-item cart-column">
+                            <img src="C:\Users\mike\Desktop\crockPins1.jpg">
+                            <div>
+                                <p>Rick and Morty Pins</p>
+                                <span class="cart-price cart-column">$9.99</span>
+
+                                <br>
+                            </div>
+                        </div>
+                    </td>
+
+                     <td class="cart-quantity cart-column">
+                         <input class="cart-quantity-input" type="number" value="1">
+                         <button class="btn btn-danger" type="button">REMOVE</button>
+                     </td>
+
+                     </div>
+                </tr>
+
+                <tr>
+                    <td width="150px">
+                        <button class="btn btn-danger" type="button">REMOVE</button>
+                    </td>
+                    <td>
+                        <div class="cart-info">
+                            <img src="C:\Users\mike\Desktop\crockPins2.jpg">
+                            <div>
+                                <p>Naruto Pins</p>
+                                <span class="cart-price cart-column">$9.99</span>
+                                <br>
+
+                            </div>
+
+
+                        </div>
+                    </td>
+
+                    <td><input type="number" value="1"></td>
+                    <td>$50.00</td>
+
+                </tr>
+            </table>
+
+                <div class="total-price">
+
+                    <table>
+                        <tr>
+                        <td class="cart-total-title">Total</td>
+                        <td class="cart-total-price">$200.00</td>
+                        </tr>
+                <!------        <tr>
+                            <td>Tax</td>
+                            <td>$35.00</td>
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td>$230.00</td>
+                        </tr> ----->
+                    </table>
+                </div>
+        </div>
+
+        <div style = "position:relative; left:1400px; top:600px; background grey;">
+            <p class="borderexample">
+            <font size="+2">Subtotal:<br></font>
+            <font size="+2">Tax:<br></font>
+            <font size="+2">Total:</font>
+            </p>
+        </div>
+
+
+    </body>
+
+</html>
