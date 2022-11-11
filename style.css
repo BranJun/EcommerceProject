@@ -60,13 +60,13 @@ p{
 
 .col-2 img{
     max-width: 100%;
-    padding: 50px 0; /* Sets image size of soccer player */
+    padding: 100px 0; /* Sets image size of soccer player */
 }
 
 .col-2 h1{
     font-size: 50px;
     line-height: 60px;
-    margin: 25px 0;
+    margin: 50px 0;
 }
 
 .btn{
@@ -112,7 +112,7 @@ here I design the products featured on the home page*/
     padding-left: 25px;
     padding-right: 25px;
 }
-/* linking to .col-4:hover, we are editing our product image to be
+/* linking to .col-4:hover, I am editing our product image to be
 spaced out between each other by 10px and set a frame for it, to look aligned
 with our website, the transition tag allows :hover, to make the image
 jump Y-axis by 5 pxs and it will take 0.5sec to reach the top
@@ -147,8 +147,8 @@ of the 5th px*/
     left: 50%;
     transform: translatex(-50%);
 }
-/* h4, col-4 and rating, we are changing the font size of the title
- of the product as well as the color, also we are changing the
+/* h4, col-4 and rating, I am changing the font size of the title
+ of the product as well as the color, also changing the
  color of the star rating.*/
 h4{
     color: #555;
@@ -177,8 +177,11 @@ to get a longer floating effect as well*/
 }
 /*Edit of the paragraph text and background color and margin
 space in the footer*/
+.footer a{
+    color: #7db9fc;
+}
 .footer p{
-    color:#8a8a8a;
+    color: #8a8a8a;
 }
 .footer h3{
     color: #fff;
@@ -201,5 +204,49 @@ ul{
     color: #7db9fc;
 }
 
+/* Here im adding/editing a menu-icon tab, so that when
+the webpage is minimized to a certain window size, a smaller
+option will appear*/
+.menu-icon{
+    width: 28px;
+    margin-left: 20px;
+    display: none;
+}
+/*media menu*/
+@media only screen and (max-width:700px){
+    /* ^sets at what size window the menu appears^ */
+    nav ul{
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: #333;
+        width: 100%;
+        overflow: hidden;
+        transition: max-height 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin-right: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    nav ul li a{
+        color: #ffffff;
+    }
+    .menu-icon{
+        display: block;
+        cursor: pointer;
+    }
+}
 
+/*Media for less than 600px screen size aka apple/android smart phones */
+@media only screen and (max-width:600px){
+    .row{
+        text-align: center;
+    }
+    .col-2, .col-3, .col-4{
+        flex-basis: 100%;
+
+    }
+}
 
