@@ -1,14 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 
 
         <!----- cart item details ----------------->
 
 
+    .cart-container{
+         max-width: 1300px;
+         margin: auto;
+    }
+
 
             .cart-page{
-                margin:80px auto;
+                margin: 80px auto;
             }
             table{
+
                 width:100%;
                 border-collapse: collapse;
                 margin-bottom: 20px;
@@ -24,11 +35,12 @@
 
             }
 
+
             th{
-               text-align: left;
-               padding 5px;
-               color: #fff;
-               background: #ff523b;
+               text-align:  left;
+               color: #ffffff;
+               background: #B0E0E6;
+               font-size: 25px;
                font-wegiht: normal;
             }
             td button{
