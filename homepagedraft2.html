@@ -9,10 +9,10 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&display=swap">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-
 </head>
 <body>
 <!----- Front page ----->
@@ -21,23 +21,32 @@
     <div class="container">
        <div class="navbar">
            <div class="logo">
-               <a href="homepagedraft2.html">
-               <img src="img/StardustTwo.png" width="100px">
-               </a>
+               <img src="images/StardustTwo.png" width="100px">
            </div>
            <nav>
                <ul id="MenuItems">
                    <li><a href="">Home</a></li>
                    <li><a href="">Products</a></li>
                    <li><a href="">About</a></li>
-                   <li><a href="">Contact</a></li>
+                   <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScZb8dYWAcuYCuGjaskCwGuQhJw6bmu4Desuj2wEZ9Nxt5Cig/viewform?usp=sf_link">
+                       Contact</a></li>
                    <li><a href="">Account</a></li>
                </ul>
            </nav>
-           <a href="cart.html"><img src="img/cart.png" width="30px" height="30px"></a>
+
+               <a href=""><img src="images/cart.png" width="30px" height="30px"></a>
+               <!--span class="badge">0</span-->
+
            <img src="images/menuIcon.png" class="menu-icon"
                 onclick="toggleMenu()">
            <!--toggle menu bar, when clicking on the menuIcon-->
+           <form>
+               
+               <i data-count="1" class="badge"></i>
+
+           </form>
+
+
 
        </div>
        <div class="row">
@@ -46,8 +55,8 @@
                <p>Feel free to browse from our huge selection of products!
                    <br>
                    <br>
-                   We find the best deals so you dont have to!</p>
-               <a href="" class="btn">Explore Now &#8594; </a>
+                   We find the best deals, so you don't have to!</p>
+               <a href="" class="btn"> Explore Now &#8594; </a>
            </div>
            <div class="col-2">
                 <img src="images/mpaypal.jpeg">
@@ -96,6 +105,43 @@
                     <i class="fa fa-star-o"></i>
                 </div>
                 <p>$420.69</p>
+                <!--Add to cart feature-->
+                    <div>
+                        <label>Qty: </label>
+                        <select>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <button onclick='incrementVal()'>Add to cart</button>
+
+            </div>
+
+            <div class="col-4">
+                <img src="images/exampleProd1.jpeg">
+                <h4>The Goods</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$420.69</p>
+                <div>
+                    <label>Qty: </label>
+                    <select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <button> Add To Cart</button>
             </div>
             <div class="col-4">
                 <img src="images/exampleProd1.jpeg">
@@ -108,6 +154,17 @@
                     <i class="fa fa-star-o"></i>
                 </div>
                 <p>$420.69</p>
+                <div>
+                    <label>Qty: </label>
+                    <select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <button> Add To Cart</button>
             </div>
             <div class="col-4">
                 <img src="images/exampleProd1.jpeg">
@@ -120,18 +177,17 @@
                     <i class="fa fa-star-o"></i>
                 </div>
                 <p>$420.69</p>
-            </div>
-            <div class="col-4">
-                <img src="images/exampleProd1.jpeg">
-                <h4>The Goods</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
+                <div>
+                    <label>Qty: </label>
+                    <select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
                 </div>
-                <p>$420.69</p>
+                <button> Add To Cart</button>
             </div>
 
         </div>
@@ -150,6 +206,17 @@
                     <i class="fa fa-star-o"></i>
                 </div>
                 <p>$420.69</p>
+                <div>
+                    <label>Qty: </label>
+                    <select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <button> Add To Cart</button>
             </div>
             <div class="col-4">
                 <img src="images/exampleProd1.jpeg">
@@ -162,6 +229,17 @@
                     <i class="fa fa-star-o"></i>
                 </div>
                 <p>$420.69</p>
+                <div>
+                    <label>Qty: </label>
+                    <select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <button> Add To Cart</button>
             </div>
             <div class="col-4">
                 <img src="images/exampleProd1.jpeg">
@@ -174,6 +252,17 @@
                     <i class="fa fa-star-o"></i>
                 </div>
                 <p>$420.69</p>
+                <div>
+                    <label>Qty: </label>
+                    <select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <button> Add To Cart</button>
             </div>
             <div class="col-4">
                 <img src="images/exampleProd1.jpeg">
@@ -186,6 +275,17 @@
                     <i class="fa fa-star-o"></i>
                 </div>
                 <p>$420.69</p>
+                <div>
+                    <label>Qty: </label>
+                    <select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <button> Add To Cart</button>
             </div>
 
         </div>
@@ -204,7 +304,8 @@
                         <ul>
                             <li><a href="">Creators of Stardust</a></li>
                             <li><a href="">Return Policy</a></li>
-                            <li><a href="">Contact & Form Submission</a></li>
+                            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScZb8dYWAcuYCuGjaskCwGuQhJw6bmu4Desuj2wEZ9Nxt5Cig/viewform?usp=sf_link">
+                                Contact & Form Submission</a></li>
                         </ul>
                     </div>
                     <div class="footer-col-4">
@@ -232,6 +333,11 @@
             }
         }
     </script>
+
+<!-- JS for adding to cart number value (notification number) -->
+
+
+
 
 </body>
 </html>
