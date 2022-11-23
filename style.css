@@ -46,6 +46,28 @@ p{
     padding-right: 25px;
 }
 
+.badge:after{
+    content: attr(data-count);
+    position: absolute;
+    background: #d96d6d;
+    height: 25px;
+    top: 25px;
+    right: 15px;
+    width: 25px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 18px;
+    border-radius: 50%;
+    color: white;
+    border: 1px solid #0022ff;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+
+
+
+
 .row{
     display: flex;
     align-items: center;
@@ -249,4 +271,9 @@ option will appear*/
 
     }
 }
+
+
+
+
+
 
