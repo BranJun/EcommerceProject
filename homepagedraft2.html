@@ -42,7 +42,7 @@
            <!--toggle menu bar, when clicking on the menuIcon-->
            <form>
                
-               <i data-count="1" class="badge"></i>
+               <i id="cartcounter" class="badge"></i>
 
            </form>
 
@@ -116,7 +116,7 @@
                             <option>5</option>
                         </select>
                     </div>
-                    <button onclick='incrementVal()'>Add to cart</button>
+                    <button onclick="addClick(item1)">Add to cart</button>
 
             </div>
 
@@ -141,7 +141,7 @@
                         <option>5</option>
                     </select>
                 </div>
-                <button> Add To Cart</button>
+                <button onclick="addClick(item2)"> Add To Cart</button>
             </div>
             <div class="col-4">
                 <img src="img/exampleProd1.jpeg">
@@ -164,7 +164,7 @@
                         <option>5</option>
                     </select>
                 </div>
-                <button> Add To Cart</button>
+                <button onclick="addClick(item3)"> Add To Cart</button>
             </div>
             <div class="col-4">
                 <img src="img/exampleProd1.jpeg">
@@ -187,7 +187,7 @@
                         <option>5</option>
                     </select>
                 </div>
-                <button> Add To Cart</button>
+                <button onclick="addClick(item4)"> Add To Cart</button>
             </div>
 
         </div>
@@ -216,7 +216,7 @@
                         <option>5</option>
                     </select>
                 </div>
-                <button> Add To Cart</button>
+                <button onclick="addClick(item5)"> Add To Cart</button>
             </div>
             <div class="col-4">
                 <img src="img/exampleProd1.jpeg">
@@ -239,7 +239,7 @@
                         <option>5</option>
                     </select>
                 </div>
-                <button> Add To Cart</button>
+                <button onclick="addClick(item6)"> Add To Cart</button>
             </div>
             <div class="col-4">
                 <img src="img/exampleProd1.jpeg">
@@ -262,7 +262,7 @@
                         <option>5</option>
                     </select>
                 </div>
-                <button> Add To Cart</button>
+                <button onclick="addClick(item7)"> Add To Cart</button>
             </div>
             <div class="col-4">
                 <img src="img/exampleProd1.jpeg">
@@ -285,7 +285,7 @@
                         <option>5</option>
                     </select>
                 </div>
-                <button> Add To Cart</button>
+                <button onclick= "addClick(item8)"> Add To Cart</button>
             </div>
 
         </div>
@@ -335,6 +335,34 @@
     </script>
 
 <!-- JS for adding to cart number value (notification number) -->
+    <script src="/js/cart-data-handler.js"></script>
+    <script>
+        loadCart();                                                 //will load cart in case there is one saved already
+        cartcount = getCartSize().toString();
+        document.getElementById("cartcounter").innerHTML = cartcount;
+
+
+
+
+        const item1 = new item(1,"img/exampleProd1.jpeg","prod1",420.69,1);     //create individual items for each add to cart button
+        const item2 = new item(2,"img/exampleProd1.jpeg","prod1",420.69,1);
+        const item3 = new item(3,"img/exampleProd1.jpeg","prod1",420.69,1);
+        const item4 = new item(4,"img/exampleProd1.jpeg","prod1",420.69,1);
+        const item5 = new item(5,"img/exampleProd1.jpeg","prod1",420.69,1);
+        const item6 = new item(6,"img/exampleProd1.jpeg","prod1",420.69,1);
+        const item7 = new item(7,"img/exampleProd1.jpeg","prod1",420.69,1);
+        const item8 = new item(8,"img/exampleProd1.jpeg","prod1",420.69,1);
+
+        function addClick(the_item){                                              //function takes item and adds it to cart, it will increment cart counter if item is unique
+            addItem(the_item);
+            cartcount = getCartSize().toString();
+            document.getElementById("cartcounter").innerHTML = cartcount;
+            saveCart();
+            console.log("Item added");
+        }
+        console.log("Script finished")
+    </script>
+
 
 
 
