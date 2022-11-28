@@ -12,11 +12,13 @@
 
         <div class="row">
           <div class="col-50">
-            <h3>Billing Address</h3>
+            <h3>Shipping Information</h3>
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+            <input type="text" id="fname" name="fullname" placeholder="John M. Doe">
             <label for="email"><i class="fa fa-envelope"></i> Email</label>
             <input type="text" id="email" name="email" placeholder="john@example.com">
+            <label for="telephone"><i class="fa fa-envelope"></i> Telephone</label>
+            <input type="text" id="telephone" name="telephone" placeholder="000-000-0000">
             <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
             <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
             <label for="city"><i class="fa fa-institution"></i> City</label>
@@ -66,9 +68,35 @@
         <label>
           <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
         </label>
-        <input type="submit" value="Continue to checkout" class="btn">
+        <input type="submit" value="Continue to checkout" class="btn" onclick="submit()">
     </div>
   </div>
+
+  <script src="js/customer-data-handler.js"></script>
+  <script>
+    function submit()
+    {
+      let name = document.getElementById("fname").value;
+      let email = document.getElementById("email").value;
+      let telephone = document.getElementById("telephone").value;
+      let address = document.getElementById("adr").value;
+      let city = document.getElementById("city").value;
+      let state = document.getElementById("state").value;
+      let zipcode = document.getElementById("zip").value;
+      let card_name = document.getElementById("cname").value;
+      let card_num = document.getElementById("ccnum").value;
+      let exp_month = document.getElementById("expmonth").value;
+      let exp_year = document.getElementById("expyear").value;
+      let cvv = document.getElementById("cvv").value;
+
+      constructCust(name,telephone,email,address,city,state,zipcode);
+      constructPay(card_name,card_num,exp_month,cvv,exp_year);
+      submitForm(customer,payment);
+      console.log(readCustomer().customer_name);
+      window.location.replace("checkout.html");
+    }
+  </script>
+
 
 
 </body>
