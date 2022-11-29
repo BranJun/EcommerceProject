@@ -7,8 +7,10 @@
         <meta name="viewport" content="width=device-width,
         initial-scale=1.0"> <!--view for smartphone devices-->
         <title>Shopping Cart</title>
-        <link rel ="stylesheet" href="cart.css">
+
         <link rel="stylesheet" href="style.css">
+        <link rel ="stylesheet" href="cart.css">
+
         <script src="cart.js" async></script>
 
 
@@ -25,7 +27,7 @@
         <div class="header">
         <div class="navbar">
             <div class="logo">
-                <a href="homepagedraft2.html">
+                <a href="HomePageDraft3.html">
                     <img src="img/StardustTwo.png" width="100px">
                 </a>
             </div>
@@ -79,13 +81,9 @@
 <!--                         <button class="btn btn-danger" type="button">REMOVE</button>-->
 <!--                     </td>-->
 
-                     </div>
 
 
                 <tr>
-                    <td width="10px">
-                        <button class="btn btn-danger" type="button"><img src=""></button>
-                    </td>
                     <td>
                         <div class="cart-info">
                             <img src="C:\Users\mike\Desktop\crockPins2.jpg">
@@ -100,10 +98,15 @@
                         </div>
                     </td>
 
-                    <td><input type="number" value="1"></td>
+                    <td class="cart-quantity cart-column">
+                        <input class="cart-quantity-input" type="number" value="1">
+                        <button class="btn btn-danger" type="button"><img src="img/trash icon.png" style="width:20px;height:20px;"></button>
+                    </td>
+
                     <td>$50.00</td>
 
                 </tr>
+                     </div>
             </table>
 
                 <div class="total-price">
@@ -113,15 +116,13 @@
                         <td class="cart-total-title">Total</td>
                         <td class="cart-total-price">$200.00</td>
                         </tr>
-                <!------        <tr>
-                            <td>Tax</td>
-                            <td>$35.00</td>
-                        </tr>
-                        <tr>
-                            <td>Total</td>
-                            <td>$230.00</td>
-                        </tr> ----->
+
+
                     </table>
+                </div>
+
+                <div class="check-out-btn">
+                <a href="checkout.html"><button class="button check-out" type="button">Check Out</button></a>
                 </div>
         </div>
 
