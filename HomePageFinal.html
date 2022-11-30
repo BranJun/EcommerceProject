@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,
     initial-scale=1.0"> <!--view for smartphone devices-->
   <title>Crusader Store</title>
-  <link rel="stylesheet" href="css/homepage.css">
+  <link rel="stylesheet" href="style.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,7 +56,14 @@
           <br>
           <br>
           We find the best deals, so you don't have to!</p>
-        <a href="" class="btn"> Explore Now &#8594; </a>
+        
+        <section id="section-1"> 
+          <a href="#section-2" class="btn" > Explore Now &#8594; </a>
+        </section>
+        <!--The Explore Now btn, is in id=Section1 and when clicked, is href linked 
+        to id=section2. Allowing for a 'scroll down' like feature.
+        (Section2 is connected to the featured products page)-->
+
       </div>
       <div class="col-2">
         <img src="img/mpaypal.jpeg">
@@ -73,15 +80,15 @@
   <div class="small-container">
     <div class="row">
       <div class="col-3">
-        <img src="img/prod1.png">
+        <img src="img/showcase.jpeg">
       </div>
 
       <div class="col-3">
-        <img src="img/prod2.png">
+        <img src="img/showcase2.jpeg">
       </div>
 
       <div class="col-3">
-        <img src="img/prod3.png">
+        <img src="img/showcase3.jpeg">
       </div>
 
     </div>
@@ -90,13 +97,15 @@
 
 <!----- Products ----->
 <div class="small-container">
-  <h2 class="title">Our Featured Products</h2>
+  <section id="section-2">
+    <h2 class="title">Our Featured Products</h2>
+  </section>
   <div class="row">
 
 
     <div class="col-4">
-      <img src="img/exampleProd1.jpeg">
-      <h4>The Goods</h4>
+      <img src="img/pinsDD.jpeg">
+      <h4>Dunkin Donuts Pins</h4>
       <div class="rating">
         <i class="fa fa-star"></i>
         <i class="fa fa-star"></i>
@@ -104,25 +113,14 @@
         <i class="fa fa-star"></i>
         <i class="fa fa-star-o"></i>
       </div>
-      <p>$420.69</p>
+      <p>$16.00</p>
       <!--Add to cart feature-->
-      <div>
-        <label>Qty: </label>
-        <select>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-      </div>
       <button onclick="addClick(item1)">Add to cart</button>
-
     </div>
 
     <div class="col-4">
-      <img src="img/exampleProd1.jpeg">
-      <h4>The Goods</h4>
+      <img src="img/pinsAkatsuki.jpeg">
+      <h4>Akatsuki Pins</h4>
       <div class="rating">
         <i class="fa fa-star"></i>
         <i class="fa fa-star"></i>
@@ -130,22 +128,13 @@
         <i class="fa fa-star"></i>
         <i class="fa fa-star-o"></i>
       </div>
-      <p>$420.69</p>
-      <div>
-        <label>Qty: </label>
-        <select>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-      </div>
+      <p>$11.99</p>
       <button onclick="addClick(item2)"> Add To Cart</button>
     </div>
+
     <div class="col-4">
-      <img src="img/exampleProd1.jpeg">
-      <h4>The Goods</h4>
+      <img src="img/pinsDisney.jpeg">
+      <h4>Disney Pins</h4>
       <div class="rating">
         <i class="fa fa-star"></i>
         <i class="fa fa-star"></i>
@@ -153,22 +142,13 @@
         <i class="fa fa-star"></i>
         <i class="fa fa-star-o"></i>
       </div>
-      <p>$420.69</p>
-      <div>
-        <label>Qty: </label>
-        <select>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-      </div>
+      <p>$19.99</p>
       <button onclick="addClick(item3)"> Add To Cart</button>
     </div>
+
     <div class="col-4">
-      <img src="img/exampleProd1.jpeg">
-      <h4>The Goods</h4>
+      <img src="img/pinsDragonBall.jpeg">
+      <h4>Dragon Ball-Z Pins</h4>
       <div class="rating">
         <i class="fa fa-star"></i>
         <i class="fa fa-star"></i>
@@ -176,17 +156,7 @@
         <i class="fa fa-star"></i>
         <i class="fa fa-star-o"></i>
       </div>
-      <p>$420.69</p>
-      <div>
-        <label>Qty: </label>
-        <select>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-      </div>
+      <p>$17.00</p>
       <button onclick="addClick(item4)"> Add To Cart</button>
     </div>
 
@@ -196,8 +166,8 @@
 
 
     <div class="col-4">
-      <img src="img/exampleProd1.jpeg">
-      <h4>The Goods</h4>
+      <img src="img/pinsFutbol.jpeg">
+      <h4>Soccer Pins</h4>
       <div class="rating">
         <i class="fa fa-star"></i>
         <i class="fa fa-star"></i>
@@ -205,22 +175,13 @@
         <i class="fa fa-star"></i>
         <i class="fa fa-star-o"></i>
       </div>
-      <p>$420.69</p>
-      <div>
-        <label>Qty: </label>
-        <select>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-      </div>
+      <p>$21.99</p>
       <button onclick="addClick(item5)"> Add To Cart</button>
     </div>
+
     <div class="col-4">
-      <img src="img/exampleProd1.jpeg">
-      <h4>The Goods</h4>
+      <img src="img/pinsHockey.jpg">
+      <h4>Hockey Pins</h4>
       <div class="rating">
         <i class="fa fa-star"></i>
         <i class="fa fa-star"></i>
@@ -228,22 +189,13 @@
         <i class="fa fa-star"></i>
         <i class="fa fa-star-o"></i>
       </div>
-      <p>$420.69</p>
-      <div>
-        <label>Qty: </label>
-        <select>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-      </div>
+      <p>$14.10</p>
       <button onclick="addClick(item6)"> Add To Cart</button>
     </div>
+
     <div class="col-4">
-      <img src="img/exampleProd1.jpeg">
-      <h4>The Goods</h4>
+      <img src="img/pinsMinion.jpeg">
+      <h4>Minion Pins</h4>
       <div class="rating">
         <i class="fa fa-star"></i>
         <i class="fa fa-star"></i>
@@ -251,22 +203,13 @@
         <i class="fa fa-star"></i>
         <i class="fa fa-star-o"></i>
       </div>
-      <p>$420.69</p>
-      <div>
-        <label>Qty: </label>
-        <select>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-      </div>
+      <p>$19.99</p>
       <button onclick="addClick(item7)"> Add To Cart</button>
     </div>
+
     <div class="col-4">
-      <img src="img/exampleProd1.jpeg">
-      <h4>The Goods</h4>
+      <img src="img/pinsNaruto.jpg">
+      <h4>Naruto Pins</h4>
       <div class="rating">
         <i class="fa fa-star"></i>
         <i class="fa fa-star"></i>
@@ -274,17 +217,7 @@
         <i class="fa fa-star"></i>
         <i class="fa fa-star-o"></i>
       </div>
-      <p>$420.69</p>
-      <div>
-        <label>Qty: </label>
-        <select>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-      </div>
+      <p>$18.99</p>
       <button onclick= "addClick(item8)"> Add To Cart</button>
     </div>
 
@@ -342,16 +275,14 @@
   document.getElementById("cartcounter").innerHTML = cartcount;
 
 
-
-
-  const item1 = new item(1,"img/exampleProd1.jpeg","prod1",420.69,1);     //create individual items for each add to cart button
-  const item2 = new item(2,"img/exampleProd1.jpeg","prod1",420.69,1);
-  const item3 = new item(3,"img/exampleProd1.jpeg","prod1",420.69,1);
-  const item4 = new item(4,"img/exampleProd1.jpeg","prod1",420.69,1);
-  const item5 = new item(5,"img/exampleProd1.jpeg","prod1",420.69,1);
-  const item6 = new item(6,"img/exampleProd1.jpeg","prod1",420.69,1);
-  const item7 = new item(7,"img/exampleProd1.jpeg","prod1",420.69,1);
-  const item8 = new item(8,"img/exampleProd1.jpeg","prod1",420.69,1);
+  const item1 = new item(1,"img/pinsDD.jpeg","Dunkin Donuts Pins",16.00,1);     //create individual items for each add to cart button
+  const item2 = new item(2,"pinsAkatsuki.jpeg","Akatsuki Pins",11.99,1);
+  const item3 = new item(3,"img/pinsDisney.jpeg","Disney Pins",19.99,1);
+  const item4 = new item(4,"img/pinsDragonBall","Dragon Ball-Z Pins",17.00,1);
+  const item5 = new item(5,"img/pinsFutbol","Soccer Pins",21.99,1);
+  const item6 = new item(6,"img/pinsHockey","Hockey Pins",14.10,1);
+  const item7 = new item(7,"img/pinsMinion","Minion Pins",19.99,1);
+  const item8 = new item(8,"img/pinsNaruto","Naruto Pins",18.99,1);
 
   function addClick(the_item){                                              //function takes item and adds it to cart, it will increment cart counter if item is unique
     addItem(the_item);
@@ -362,9 +293,6 @@
   }
   console.log("Script finished")
 </script>
-
-
-
 
 
 </body>
