@@ -6,7 +6,7 @@ let item = class
         this.item_img = item_img
         this.item_name = item_name;
         this.item_price = item_price;
-        this.item_quanity = item_quantity;
+        this.item_quantity = item_quantity;
     }
 }
 
@@ -23,7 +23,7 @@ function addItem(the_item)
     {
         if(cart.item_array[i].item_id === the_item.item_id)
         {
-            cart.item_array[i].item_quanity =+ 1;
+            cart.item_array[i].item_quantity += 1;
             in_cart = true;
             console.log("added quantity");
         }
@@ -39,9 +39,19 @@ function getCartSize()
     if(cart != null)
         return cart.item_array.length;
     else
-        {
-            return 0;
-        }
+    {
+        return 0;
+    }
+}
+
+function getCartTotal()
+{
+    let total = 0;
+    for(let i = 0;i < cart.item_array.length;i++)
+    {
+        total = total + (cart.item_array[i].item_price * cart.item_array[i].item_quantity)
+    }
+    return total;
 }
 
 function saveCart()      //save cart to session storage
@@ -57,8 +67,10 @@ function loadCart()      //load cart from item storage
         cart = JSON.parse(temp);
         return cart;
     }
+    else
+        return cart;
+
 
 }
 
 loadCart(); //Automatically load cart data if it exists
-
