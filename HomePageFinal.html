@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,
+    initial-scale=1.0"> <!--view for smartphone devices-->
+  <title>Crusader Store</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&display=swap">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<body>
+<!----- Front page ----->
+<div class="header">
+
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <img src="img/StardustTwo.png" width="100px">
+      </div>
+      <nav>
+        <ul id="MenuItems">
+          <li><a href="">Home</a></li>
+          <li><a href="">Products</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScZb8dYWAcuYCuGjaskCwGuQhJw6bmu4Desuj2wEZ9Nxt5Cig/viewform?usp=sf_link">
+            Contact</a></li>
+          <li><a href="">Account</a></li>
+        </ul>
+      </nav>
+
+      <a href=""><img src="img/cart.png" width="30px" height="30px"></a>
+      <!--span class="badge">0</span-->
+
+      <img src="img/menuIcon.png" class="menu-icon"
+           onclick="toggleMenu()">
+      <!--toggle menu bar, when clicking on the menuIcon-->
+      <form>
+
+        <i id="cartcounter" class="badge"></i>
+
+      </form>
+
+
+
+    </div>
+    <div class="row">
+      <div class="col-2">
+        <h1>Welcome to <i>Stardust</i></h1>
+        <p>Feel free to browse from our huge selection of products!
+          <br>
+          <br>
+          We find the best deals, so you don't have to!</p>
+        <a href="" class="btn"> Explore Now &#8594; </a>
+      </div>
+      <div class="col-2">
+        <img src="img/mpaypal.jpeg">
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+<!----- Categories ----->
+<div class="categories">
+  <div class="small-container">
+    <div class="row">
+      <div class="col-3">
+        <img src="img/prod1.png">
+      </div>
+
+      <div class="col-3">
+        <img src="img/prod2.png">
+      </div>
+
+      <div class="col-3">
+        <img src="img/prod3.png">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!----- Products ----->
+<div class="small-container">
+  <h2 class="title">Our Featured Products</h2>
+  <div class="row">
+
+
+    <div class="col-4">
+      <img src="img/exampleProd1.jpeg">
+      <h4>The Goods</h4>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>$420.69</p>
+      <!--Add to cart feature-->
+      <div>
+        <label>Qty: </label>
+        <select>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <button onclick="addClick(item1)">Add to cart</button>
+
+    </div>
+
+    <div class="col-4">
+      <img src="img/exampleProd1.jpeg">
+      <h4>The Goods</h4>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>$420.69</p>
+      <div>
+        <label>Qty: </label>
+        <select>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <button onclick="addClick(item2)"> Add To Cart</button>
+    </div>
+    <div class="col-4">
+      <img src="img/exampleProd1.jpeg">
+      <h4>The Goods</h4>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>$420.69</p>
+      <div>
+        <label>Qty: </label>
+        <select>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <button onclick="addClick(item3)"> Add To Cart</button>
+    </div>
+    <div class="col-4">
+      <img src="img/exampleProd1.jpeg">
+      <h4>The Goods</h4>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>$420.69</p>
+      <div>
+        <label>Qty: </label>
+        <select>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <button onclick="addClick(item4)"> Add To Cart</button>
+    </div>
+
+  </div>
+  <h2 class="title"> Our Latest Products</h2>
+  <div class="row">
+
+
+    <div class="col-4">
+      <img src="img/exampleProd1.jpeg">
+      <h4>The Goods</h4>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>$420.69</p>
+      <div>
+        <label>Qty: </label>
+        <select>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <button onclick="addClick(item5)"> Add To Cart</button>
+    </div>
+    <div class="col-4">
+      <img src="img/exampleProd1.jpeg">
+      <h4>The Goods</h4>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>$420.69</p>
+      <div>
+        <label>Qty: </label>
+        <select>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <button onclick="addClick(item6)"> Add To Cart</button>
+    </div>
+    <div class="col-4">
+      <img src="img/exampleProd1.jpeg">
+      <h4>The Goods</h4>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>$420.69</p>
+      <div>
+        <label>Qty: </label>
+        <select>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <button onclick="addClick(item7)"> Add To Cart</button>
+    </div>
+    <div class="col-4">
+      <img src="img/exampleProd1.jpeg">
+      <h4>The Goods</h4>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>$420.69</p>
+      <div>
+        <label>Qty: </label>
+        <select>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <button onclick= "addClick(item8)"> Add To Cart</button>
+    </div>
+
+  </div>
+</div>
+
+
+<!----------footer------------------->
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col-1">
+        <h3><!--something--></h3>
+
+        <div class="footer-col-3">
+          <h3>For More Information</h3>
+          <ul>
+            <li><a href="">Creators of Stardust</a></li>
+            <li><a href="">Return Policy</a></li>
+            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScZb8dYWAcuYCuGjaskCwGuQhJw6bmu4Desuj2wEZ9Nxt5Cig/viewform?usp=sf_link">
+              Contact & Form Submission</a></li>
+          </ul>
+        </div>
+        <div class="footer-col-4">
+          <h3>Follow Us</h3>
+          <ul>
+            <li><a href="">Twitter</a></li>
+            <li><a href="">Instagram</a></li>
+            <li>Linkden</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--JavaScript for menu toggle-->
+<script>
+  var MenuItems = document.getElementById("MenuItems");
+  MenuItems.style.maxHeight = "0px";
+  function toggleMenu(){
+    if(MenuItems.style.maxHeight == "0px"){
+      MenuItems.style.maxHeight = "200px";
+    } else {
+      MenuItems.style.maxHeight = "0px";
+    }
+  }
+</script>
+
+<!-- JS for adding to cart number value (notification number) -->
+<script src="/js/cart-data-handler.js"></script>
+<script>
+  loadCart();                                                 //will load cart in case there is one saved already
+  cartcount = getCartSize().toString();
+  document.getElementById("cartcounter").innerHTML = cartcount;
+
+
+
+
+  const item1 = new item(1,"img/exampleProd1.jpeg","prod1",420.69,1);     //create individual items for each add to cart button
+  const item2 = new item(2,"img/exampleProd1.jpeg","prod1",420.69,1);
+  const item3 = new item(3,"img/exampleProd1.jpeg","prod1",420.69,1);
+  const item4 = new item(4,"img/exampleProd1.jpeg","prod1",420.69,1);
+  const item5 = new item(5,"img/exampleProd1.jpeg","prod1",420.69,1);
+  const item6 = new item(6,"img/exampleProd1.jpeg","prod1",420.69,1);
+  const item7 = new item(7,"img/exampleProd1.jpeg","prod1",420.69,1);
+  const item8 = new item(8,"img/exampleProd1.jpeg","prod1",420.69,1);
+
+  function addClick(the_item){                                              //function takes item and adds it to cart, it will increment cart counter if item is unique
+    addItem(the_item);
+    cartcount = getCartSize().toString();
+    document.getElementById("cartcounter").innerHTML = cartcount;
+    saveCart();
+    console.log("Item added");
+  }
+  console.log("Script finished")
+</script>
+
+
+
+
+
+</body>
+</html>
