@@ -116,3 +116,8 @@
             .check-out:hover{
                           background: #343e56;
                       }
+
+            .footer{
+                position: relative;
+                min-height:60vh
+            }
