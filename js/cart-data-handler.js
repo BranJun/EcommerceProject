@@ -49,9 +49,11 @@ function getCartTotal()
     let total = 0;
     for(let i = 0;i < cart.item_array.length;i++)
     {
-        total = total + (cart.item_array[i].item_price * cart.item_array[i].item_quantity)
+        if(cart.item_array[i]!= null) {
+            total = total + (cart.item_array[i].item_price * cart.item_array[i].item_quantity)
+        }
     }
-    return total;
+    return Math.round((total + Number.EPSILON) * 100) / 100;
 }
 
 function saveCart()      //save cart to session storage

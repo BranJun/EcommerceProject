@@ -53,7 +53,7 @@
 
         <!----- cart item details ----------------->
         <div class="small-container cart-page">
-            <table>
+            <table id = "cart_table">
 
                 <tr>
                     <th width="50%">Product</th>
@@ -62,7 +62,7 @@
                 </tr>
 
 
-                     <div class = "cart-row">
+                     <div class = "cart-row" id="cart_row">
 
 
 <!--                        <div class="cart-item cart-column">-->
@@ -83,30 +83,8 @@
 
 
 
-                <tr>
-                    <td>
-                        <div class="cart-info">
-                            <img src="C:\Users\mike\Desktop\crockPins2.jpg">
-                            <div>
-                                <p>Naruto Pins</p>
-                                <span class="cart-price cart-column">$9.99</span>
-                                <br>
-
-                            </div>
-
-
-                        </div>
-                    </td>
-
-                    <td class="cart-quantity cart-column">
-                        <input class="cart-quantity-input" type="number" value="1">
-                        <button class="btn btn-danger" type="button"><img src="img/trash icon.png" style="width:20px;height:20px;"></button>
-                    </td>
-
-                    <td>$50.00</td>
-
-                </tr>
                      </div>
+
             </table>
 
                 <div class="total-price">
@@ -114,7 +92,7 @@
                     <table>
                         <tr>
                         <td class="cart-total-title">Total</td>
-                        <td class="cart-total-price">$200.00</td>
+                        <td class="cart-total-price" id="cart_total">$200.00</td>
                         </tr>
 
 
@@ -122,9 +100,118 @@
                 </div>
 
                 <div class="check-out-btn">
-                <a href="checkout.html"><button class="button check-out" type="button">Check Out</button></a>
+                <a href="payment.html"><button class="button check-out" type="button" onclick = 'saveCart()'>Check Out</button></a>
                 </div>
         </div>
+
+        <script src="js/cart-data-handler.js"></script>
+        <script>
+        cart = loadCart();
+        let newItemTr;
+        //---------------------//
+        let newProductTd;
+        let newDivCartInfo;
+        let newImg;
+        let newInfoDiv;
+        let newNameP;
+        let newSpan;
+        let newLineBreak;
+        //---------------------//
+        let newQuantityTd;
+        let newQuantityInput;
+        let newDeleteButton;
+        let newDeleteImg
+        //--------------------//
+        let newSubtotalTd;
+
+        for(let i=0;i<cart.item_array.length;i++)
+        {
+
+
+            newItemTr = document.createElement("Tr");
+            newProductTd = document.createElement("Td");
+            newDivCartInfo = document.createElement("div");
+            newImg = document.createElement("img");
+            newInfoDiv = document.createElement("div");
+            newNameP = document.createElement("p");
+            newSpan = document.createElement("span");
+            newLineBreak = document.createElement("br");
+            newQuantityTd = document.createElement("Td");
+            newQuantityInput = document.createElement("input");
+            newDeleteButton = document.createElement("button");
+            newDeleteImg = document.createElement("img");
+            newSubtotalTd = document.createElement("Td");
+
+
+            newItemTr.id = "item_div" + i;
+            newDivCartInfo.classList.add("cart-info");
+            newImg.src = cart.item_array[i].item_img;
+            newNameP.innerHTML = cart.item_array[i].item_name;
+
+            //newSpan.classList.add("cart-price cart-column");
+            newSpan.innerHTML = "$" + cart.item_array[i].item_price;
+
+            //newQuantityTd.classList.add("cart-quantity cart column");
+            newQuantityInput.id = "quant_div" + i;
+            newQuantityInput.classList.add("cart-quantity-input");
+            newQuantityInput.type = "number";
+            newQuantityInput.value = cart.item_array[i].item_quantity;
+            newQuantityInput.onchange =  function() {quantityChange(i)};
+
+
+            newDeleteButton.classList.add("btn");
+            newDeleteButton.type = "button";
+            newDeleteImg.onclick = function(){removeCartItem(i)};
+            newDeleteImg.src = "img/trash icon.png";
+            newDeleteImg.style = "width:20px;height:20px;";
+
+            newSubtotalTd.id = "subtotal_div" + i;
+            newSubtotalTd.innerHTML = "$" + cart.item_array[i].item_quantity * cart.item_array[i].item_price ;
+
+
+            document.getElementById("cart_table").appendChild(newItemTr);
+
+            newItemTr.appendChild(newProductTd);
+            newProductTd.appendChild(newDivCartInfo);
+            newDivCartInfo.appendChild(newImg);
+            newDivCartInfo.appendChild(newInfoDiv);
+            newInfoDiv.append(newNameP);
+            newInfoDiv.appendChild(newSpan);
+            newInfoDiv.appendChild(newLineBreak);
+
+            newItemTr.appendChild(newQuantityTd);
+            newQuantityTd.appendChild(newQuantityInput);
+            newQuantityTd.appendChild(newDeleteButton);
+            newDeleteButton.appendChild(newDeleteImg);
+
+            newItemTr.appendChild(newSubtotalTd);
+
+
+
+
+
+        }
+
+        document.getElementById("cart_total").innerHTML = "$" + getCartTotal();
+
+        function quantityChange(index)
+        {
+            cart.item_array[index].item_quantity = document.getElementById('quant_div'+index).value;
+            document.getElementById('subtotal_div'+index).innerHTML = "$" + cart.item_array[index].item_price * cart.item_array[index].item_quantity;
+            document.getElementById("cart_total").innerHTML = "$" + getCartTotal();
+        }
+
+        function removeCartItem(index)
+        {
+
+            document.getElementById('item_div'+ index).innerHTML = '';
+            delete cart.item_array[index];
+            document.getElementById("cart_total").innerHTML = "$" + getCartTotal();
+            saveCart();
+            console.log("delete");
+        }
+
+        </script>
 
 
 
