@@ -197,7 +197,7 @@
         function quantityChange(index)
         {
             cart.item_array[index].item_quantity = document.getElementById('quant_div'+index).value;
-            document.getElementById('subtotal_div'+index).innerHTML = "$" + cart.item_array[index].item_price * cart.item_array[index].item_quantity;
+            document.getElementById('subtotal_div'+index).innerHTML = "$" + Math.round(((cart.item_array[index].item_price * cart.item_array[index].item_quantity) + Number.EPSILON) * 100) / 100;
             document.getElementById("cart_total").innerHTML = "$" + getCartTotal();
         }
 
