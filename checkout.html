@@ -12,13 +12,12 @@
   <meta property="og:url" content="">
   <meta property="og:image" content="">
 
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/checkout.css">
-
+  <link rel="stylesheet" href="cart.css">
+  <link rel="stylesheet" href="style.css">
   <meta name="theme-color" content="#fafafa">
 </head>
 
@@ -27,46 +26,196 @@
   <!-- Add your site or application content here -->
   <header>
     <div id="logo">
-      <img src="img/99gen_initials.png" width="100" height="100">
-      ABC company
+      <div class="cart-container">
+        <div class="header">
+          <div class="navbar">
+            <div class="logo">
+              <a href="HomePageDraft3.html">
+                <img src="img/StardustTwo.png" width="100px">
+              </a>
+            </div>
+            <nav>
+              <ul id="MenuItems">
+                <li><a href="">Home</a></li>
+                <li><a href="">Products</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">Account</a></li>
+              </ul>
+            </nav>
 
-    </div>
-    <div id="title">
-      <h1>Checkout</h1>
-    </div>
-    <hr class="solid">
-  </header>
-  <section id="shipping section">
-    <h2>1. Shipping Address</h2>
+    </header>
+  <main class="main">
+   <div class="order-confirm">
+     <h1>Order Confirmation</h1>
+     <h3 id="total">Order Total:</h3>
+     <button type="button" class="btn" onclick="sendOrder()">Place Order</button>
+   </div>
+   <div class="outer-box">
+     <hr class="hr">
+    <div class="section">
+      <h1>Shipping</h1>
       <p id="name">Name:</p>
       <p id="address">Address:</p>
-      <p id="city">City:</p>
-  </section>
-  <section id="payment section">
-    <h2>2. Payment</h2>
-      <p id="payment">Card number ending with: </p>
-  </section>
-  <section id="items section">
-    <h2>3. Items</h2>
-    <p>Name       Quantity    Price</p>
-    <p>                       Total</p>
-  </section>
-  <input type="submit" value="Place Order">
+      <p id="city"> City:</p>
+      <p id="email">Email:</p>
+    </div>
+     <hr class="hr">
+     <div class="section">
+       <h1>Payment</h1>
+       <p id="card">Card Ending with:</p>
+     </div>
+     <hr class="hr">
+     <div class="section">
+       <h1>Your Items</h1>
+       <div class="small-container cart-page">
+         <table id= "cart-table">
+
+         </table>
+       </div>
+     </div>
+   </div>
+
+
+
+  </main>
   <footer>
-    <hr class="solid">
-    <p>Footer Information</p>
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3><!--something--></h3>
+
+            <div class="footer-col-3">
+              <h3>For More Information</h3>
+              <ul>
+                <li><a href="">Creators of Stardust</a></li>
+                <li><a href="">Return Policy</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScZb8dYWAcuYCuGjaskCwGuQhJw6bmu4Desuj2wEZ9Nxt5Cig/viewform?usp=sf_link">
+                  Contact & Form Submission</a></li>
+              </ul>
+            </div>
+            <div class="footer-col-4">
+              <h3>Follow Us</h3>
+              <ul>
+                <li><a href="">Twitter</a></li>
+                <li><a href="">Instagram</a></li>
+                <li>Linkden</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </footer>
-  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/customer-data-handler.js"></script>
+  <script src="js/cart-data-handler.js"></script>
 
 
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+
   <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+    cart = loadCart()
+    customer = readCustomer()
+    payment = readPayment()
+
+    console.log(cart.item_array[5].item_name)
+
+    let address = customer.customer_address + "\n"
+    let city = customer.customer_city + ", " + customer.customer_state + ", " + customer.customer_zip + "\n"
+    let order = ""
+
+    document.getElementById("total").innerHTML = "Order Total: " + getCartTotal()
+    document.getElementById("name").innerHTML = "Name:" + customer.customer_name
+    document.getElementById("address").innerHTML = "Address:" + customer.customer_address
+
+    document.getElementById("city").innerHTML = customer.customer_city + ", " + customer.customer_state + ", " + customer.customer_zip
+    document.getElementById("email").innerHTML = "Email: " + customer.customer_email
+    document.getElementById("card").innerHTML = "Card Number ending with: " + payment.card_num.substring(payment.card_num.length - 4)
+
+    let newItemTr;
+    //---------------------//
+    let newProductTd;
+    let newDivCartInfo;
+    let newImg;
+    let newInfoDiv;
+    let newNameP;
+    let newSpan;
+    let newLineBreak;
+    //---------------------//
+    let newQuantityTd;
+    let newQuantityInput;
+    let newDeleteButton;
+    let newDeleteImg
+    //--------------------//
+    let newSubtotalTd;
+
+    for(let i=0;i<cart.item_array.length;i++)
+    {
+
+      order += cart.item_array[i].item_name + "  " + cart.item_array[i].item_quantity + 'x\n'
+
+
+      newItemTr = document.createElement("Tr");
+      newProductTd = document.createElement("Td");
+      newDivCartInfo = document.createElement("div");
+      newImg = document.createElement("img");
+      newInfoDiv = document.createElement("div");
+      newNameP = document.createElement("p");
+      newSpan = document.createElement("span");
+      newLineBreak = document.createElement("br");
+      newQuantityTd = document.createElement("Td");
+      newQuantityInput = document.createElement("p");
+
+      newSubtotalTd = document.createElement("Td");
+
+
+      newItemTr.id = "item_div" + i;
+      newDivCartInfo.classList.add("cart-info");
+      newImg.src = cart.item_array[i].item_img;
+      newNameP.innerHTML = cart.item_array[i].item_name;
+
+      //newSpan.classList.add("cart-price cart-column");
+      newSpan.innerHTML = "$" + cart.item_array[i].item_price;
+
+      //newQuantityTd.classList.add("cart-quantity cart column");
+      newQuantityInput.id = "quant_div" + i;
+      newQuantityInput.classList.add("cart-quantity-input");
+      newQuantityInput.innerHTML = 'Quantity:' + cart.item_array[i].item_quantity;
+
+
+      newSubtotalTd.id = "subtotal_div" + i;
+      newSubtotalTd.innerHTML = "$" + cart.item_array[i].item_quantity * cart.item_array[i].item_price ;
+
+
+      document.getElementById("cart-table").appendChild(newItemTr);
+
+      newItemTr.appendChild(newProductTd);
+      newProductTd.appendChild(newDivCartInfo);
+      newDivCartInfo.appendChild(newImg);
+      newDivCartInfo.appendChild(newInfoDiv);
+      newInfoDiv.append(newNameP);
+      newInfoDiv.appendChild(newSpan);
+      newInfoDiv.appendChild(newLineBreak);
+
+      newItemTr.appendChild(newQuantityTd);
+      newQuantityTd.appendChild(newQuantityInput);
+
+      newItemTr.appendChild(newSubtotalTd);
+
+    }
+
+    function sendOrder ()
+    {
+      let orderString = address + city + order
+        document.location.href = "mailto:StardustCrusaders@gmail.com?subject="
+                + encodeURIComponent("Your order")
+                + "&body=" + encodeURIComponent(orderString);
+
+    }
+
+
   </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
+
 </body>
 
 </html>
