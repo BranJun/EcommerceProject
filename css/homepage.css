@@ -46,16 +46,16 @@ p{
     padding-right: 25px;
 }
 
-.badge:after{
+/*.cartNum {
     content: attr(data-count);
-    position: absolute;
+    position: relative;
     background: #d96d6d;
-    height: 25px;
-    top: 25px;
-    right: 15px;
-    width: 25px;
+    height: 30px;
+    top: 20px;
+    right: 10px;
+    width: 30px;
     text-align: center;
-    line-height: 24px;
+    line-height: 28px;
     font-size: 18px;
     border-radius: 50%;
     color: white;
@@ -63,8 +63,8 @@ p{
     font-family: sans-serif;
     font-weight: bold;
 }
-
-
+cart background notification badge
+*/
 
 
 
@@ -90,7 +90,11 @@ p{
     line-height: 60px;
     margin: 50px 0;
 }
-
+html{
+    scroll-behavior: smooth;
+}
+/*hmtl corresponds with .btn class, and allows for a smooth scroll down
+feature when clicking the "explore now" button on the webage*/
 .btn{
     display: inline-block;
     background: #2a53ef;
@@ -271,9 +275,6 @@ option will appear*/
 
     }
 }
-
-
-
 
 
 
